@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SquareDMS_DataBase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8edabf18-99c5-41af-96f7-303896a95611}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SquareDMS_DataBase</RootNamespace>
+    <AssemblyName>SquareDMS_DataBase</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="StoredProcedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="DatabaseSetup.sql" />
+    <Build Include="StoredProcedures\dbo.critical_proc_delete_reset_all_data.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.critical_proc_setup_test_data.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_document.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_document_type.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_file_format.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_group.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_group_member.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_right.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_create_user.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_document.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_document_type.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_file_format.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_group.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_group_member_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_right_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_delete_user.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_document_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_document_type_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_file_format_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_group_member_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_group_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_max_user_right_on_document.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_right_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_get_user_s.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_is_doc_discarded.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_is_doc_locked.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_is_user_admin.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_is_user_creator.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_update_document.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_update_document_type.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_update_file_format.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_update_group.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_update_right.StoredProcedure.sql" />
+    <Build Include="StoredProcedures\dbo.proc_update_user.StoredProcedure.sql" />
+  </ItemGroup>
+</Project>

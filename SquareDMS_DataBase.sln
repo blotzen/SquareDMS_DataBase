@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SquareDMS_DataBase", "SquareDMS_DataBase\SquareDMS_DataBase.sqlproj", "{8EDABF18-99C5-41AF-96F7-303896A95611}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EDABF18-99C5-41AF-96F7-303896A95611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDABF18-99C5-41AF-96F7-303896A95611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDABF18-99C5-41AF-96F7-303896A95611}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8EDABF18-99C5-41AF-96F7-303896A95611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDABF18-99C5-41AF-96F7-303896A95611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EDABF18-99C5-41AF-96F7-303896A95611}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98C2D554-C195-4A12-9B5F-85CE87AC9C23}
+	EndGlobalSection
+EndGlobal
