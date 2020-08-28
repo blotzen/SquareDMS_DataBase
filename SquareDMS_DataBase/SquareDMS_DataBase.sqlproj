@@ -95,4 +95,7 @@
     <Build Include="StoredProcedures\dbo.proc_update_right.StoredProcedure.sql" />
     <Build Include="StoredProcedures\dbo.proc_update_user.StoredProcedure.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ER_Diagramm_Komplett.png" />
+  </ItemGroup>
 </Project>
