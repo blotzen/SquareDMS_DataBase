@@ -35,9 +35,11 @@ CREATE TABLE [User] (
 	last_name nvarchar(250) NOT NULL,
 	first_name nvarchar(250),
 	user_name nvarchar(250) NOT NULL UNIQUE,
+	email nvarchar(250),
 	password_hash binary(32) NOT NULL,
 	active bit NOT NULL,
 	CONSTRAINT CHK_User_Name_Lower CHECK (LOWER(user_name) = user_name COLLATE Latin1_General_CS_AS),
+	CONSTRAINT CHK_Email_Lower CHECK (LOWER(email) = email COLLATE Latin1_General_CS_AS),
 	CONSTRAINT PK__User_id PRIMARY KEY (id));
 
 CREATE TABLE Document (
