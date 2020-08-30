@@ -49,7 +49,7 @@ CREATE TABLE Document (
 	name nvarchar(250) NOT NULL,
 	locked bit NOT NULL DEFAULT 0,
 	discard bit NOT NULL DEFAULT 0,
-	CONSTRAINT CHK_Name_No_LeftRight_Spaces CHECK (LTRIM(RTRIM(name))) = name COLLATE Latin1_General_CS_AS),
+	CONSTRAINT CHK_Name_No_LeftRight_Spaces CHECK (LTRIM(RTRIM(name)) = name COLLATE Latin1_General_CS_AS),
 	CONSTRAINT PK__Document_id PRIMARY KEY (id),
 	CONSTRAINT FK__User_id__Document_Creator_id FOREIGN KEY (creator_id) REFERENCES [User](id),
 	CONSTRAINT FK__Document_Type_id__Document_document_type FOREIGN KEY (document_type) REFERENCES Document_Type(id));
