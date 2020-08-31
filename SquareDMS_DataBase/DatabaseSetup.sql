@@ -19,23 +19,23 @@ GO
 
 CREATE TABLE Document_Type (
 	id int IDENTITY(1,1),
-	name nvarchar(250) NOT NULL,
-	description nvarchar(250),
+	name nvarchar(250) NOT NULL UNIQUE,
+	description nvarchar(250) NOT NULL,
 	CONSTRAINT PK__Document_Type_id PRIMARY KEY (id));
 
 CREATE TABLE [File_Format] (
 	id int IDENTITY(1,1),
 	extension nvarchar(250) NOT NULL,
-	description nvarchar(250),
+	description nvarchar(250) NOT NULL,
 	CONSTRAINT PK__File_Format_id PRIMARY KEY (id),
 	CONSTRAINT CHK_Extension_Upper CHECK (UPPER(extension) = extension COLLATE Latin1_General_CS_AS));
 	
 CREATE TABLE [User] (
 	id int IDENTITY(1,1),
 	last_name nvarchar(250) NOT NULL,
-	first_name nvarchar(250),
+	first_name nvarchar(250) NOT NULL,
 	user_name nvarchar(250) NOT NULL UNIQUE,
-	email nvarchar(250),
+	email nvarchar(250) NOT NULL,
 	password_hash binary(32) NOT NULL,
 	active bit NOT NULL,
 	CONSTRAINT CHK_User_Name_Lower CHECK (LOWER(user_name) = user_name COLLATE Latin1_General_CS_AS),
@@ -69,7 +69,7 @@ CREATE TABLE Document_Version (
 CREATE TABLE [Group] (
 	id int IDENTITY(1,1),
 	name nvarchar(250) NOT NULL,
-	description nvarchar(250),
+	description nvarchar(250) NOT NULL,
 	[admin] bit NOT NULL DEFAULT 0,
 	creator bit NOT NULL DEFAULT 0,
 	CONSTRAINT CHK_Either_Admin_XOR_Creator CHECK ((creator = 0 AND admin = 1) 
