@@ -92,3 +92,20 @@ CREATE TABLE [Right] (
 	CONSTRAINT FK__Right_Group_id__Group_id FOREIGN KEY (group_id) REFERENCES [Group](id),
 	CONSTRAINT FK__Right_Document_id__Document_id FOREIGN KEY (document_id) REFERENCES Document(id));
 
+-- Insert System Admin
+INSERT INTO [User]
+VALUES ('Admin', 'Admin', 'admin', '', 0x4F5F2C70332159747B59A4A1F837458A32802B05F3F947A71DD67BB2EFE01E49, 1);
+
+-- Insert Default Groups
+INSERT INTO [Group]
+VALUES ('Admins', 'Haben vollständige Rechte.', 1, 0);
+
+INSERT INTO [Group]
+VALUES ('Benutzer', 'Haben keine Rechte auf Dokumente.', 0, 0);
+
+INSERT INTO [Group]
+VALUES ('Creators', 'Dürfen Dokumente erstellen.', 0, 1);
+
+-- Put Admin in Admin-Group
+INSERT INTO Group_Member
+VALUES (1, 1);
